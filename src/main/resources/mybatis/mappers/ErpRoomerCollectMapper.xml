@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.ErpRoomerCollectMapper">
+    <resultMap id="BaseResultMap" type="com.mybatis.model.ErpRoomerCollect">
+        <!--
+        @mbggenerated
+        -->
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="roomer_key" jdbcType="BIGINT" property="roomerKey" />
+        <result column="user_id" jdbcType="BIGINT" property="userId" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+        @mbggenerated
+        -->
+        id, roomer_key, user_id, user_name, create_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--
+        @mbggenerated
+        -->
+        select 
+        <include refid="Base_Column_List" />
+        from erp_roomer_collect
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--
+        @mbggenerated
+        -->
+        delete from erp_roomer_collect
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.mybatis.model.ErpRoomerCollect">
+        <!--
+        @mbggenerated
+        -->
+        insert into erp_roomer_collect (id, roomer_key, user_id, 
+            user_name, create_time)
+        values (#{id,jdbcType=BIGINT}, #{roomerKey,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, 
+            #{userName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="com.mybatis.model.ErpRoomerCollect">
+        <!--
+        @mbggenerated
+        -->
+        insert into erp_roomer_collect
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="roomerKey != null">
+                roomer_key,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="roomerKey != null">
+                #{roomerKey,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.model.ErpRoomerCollect">
+        <!--
+        @mbggenerated
+        -->
+        update erp_roomer_collect
+        <set>
+            <if test="roomerKey != null">
+                roomer_key = #{roomerKey,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.mybatis.model.ErpRoomerCollect">
+        <!--
+        @mbggenerated
+        -->
+        update erp_roomer_collect
+        set roomer_key = #{roomerKey,jdbcType=BIGINT},
+            user_id = #{userId,jdbcType=BIGINT},
+            user_name = #{userName,jdbcType=VARCHAR},
+            create_time = #{createTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <resultMap id="BaseResultMap" type="com.mybatis.model.ErpRoomerCollect">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="roomer_key" jdbcType="BIGINT" property="roomerKey" />
+        <result column="user_id" jdbcType="BIGINT" property="userId" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, roomer_key, user_id, user_name, create_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select 
+        <include refid="Base_Column_List" />
+        from erp_roomer_collect
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from erp_roomer_collect
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.mybatis.model.ErpRoomerCollect">
+        insert into erp_roomer_collect (id, roomer_key, user_id, 
+            user_name, create_time)
+        values (#{id,jdbcType=BIGINT}, #{roomerKey,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, 
+            #{userName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="com.mybatis.model.ErpRoomerCollect">
+        insert into erp_roomer_collect
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="roomerKey != null">
+                roomer_key,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="roomerKey != null">
+                #{roomerKey,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.model.ErpRoomerCollect">
+        update erp_roomer_collect
+        <set>
+            <if test="roomerKey != null">
+                roomer_key = #{roomerKey,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.mybatis.model.ErpRoomerCollect">
+        update erp_roomer_collect
+        set roomer_key = #{roomerKey,jdbcType=BIGINT},
+            user_id = #{userId,jdbcType=BIGINT},
+            user_name = #{userName,jdbcType=VARCHAR},
+            create_time = #{createTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>
