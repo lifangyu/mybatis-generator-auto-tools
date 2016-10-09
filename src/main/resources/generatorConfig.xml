@@ -71,8 +71,11 @@
                enableUpdateByExample="false"
                selectByExampleQueryId="fasle" >
 
-            <!-- insert sql 返回自动增长的id值  -->
+            <!--
+            insert sql 返回Sequence主键值[如果是自动增长的id主键：建议在sql中添加 <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id"> ]
+            -->
             <generatedKey column="id" sqlStatement="MySql"/>
+
             <!-- generatedKey用于生成生成主键的方法，
                         如果设置了该元素，MBG会在生成的<insert>元素中生成一条正确的<selectKey>元素，该元素可选
                         column:主键的列名；
