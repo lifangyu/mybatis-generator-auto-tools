@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.ErpRoomerInfoMapper">
+    <resultMap id="BaseResultMap" type="com.mybatis.model.ErpRoomerInfo">
+        <!--
+        @mbggenerated
+        -->
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="roomer_key" jdbcType="VARCHAR" property="roomerKey" />
+        <result column="roomer_code" jdbcType="VARCHAR" property="roomerCode" />
+        <result column="trade_status" jdbcType="INTEGER" property="tradeStatus" />
+        <result column="resource" jdbcType="INTEGER" property="resource" />
+        <result column="trade_type" jdbcType="INTEGER" property="tradeType" />
+        <result column="peculiarity" jdbcType="INTEGER" property="peculiarity" />
+        <result column="pub_private" jdbcType="INTEGER" property="pubPrivate" />
+        <result column="grade" jdbcType="CHAR" property="grade" />
+        <result column="entrust" jdbcType="INTEGER" property="entrust" />
+        <result column="entrust_date" jdbcType="DATE" property="entrustDate" />
+        <result column="user_id" jdbcType="BIGINT" property="userId" />
+        <result column="roomer_name" jdbcType="VARCHAR" property="roomerName" />
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
+        <result column="id_num" jdbcType="VARCHAR" property="idNum" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="qq" jdbcType="VARCHAR" property="qq" />
+        <result column="current_address" jdbcType="VARCHAR" property="currentAddress" />
+        <result column="sex" jdbcType="CHAR" property="sex" />
+        <result column="country" jdbcType="VARCHAR" property="country" />
+        <result column="family_register" jdbcType="VARCHAR" property="familyRegister" />
+        <result column="intention" jdbcType="INTEGER" property="intention" />
+        <result column="buy_deadline" jdbcType="INTEGER" property="buyDeadline" />
+        <result column="profession" jdbcType="INTEGER" property="profession" />
+        <result column="house_type" jdbcType="INTEGER" property="houseType" />
+        <result column="house_goal" jdbcType="INTEGER" property="houseGoal" />
+        <result column="remark" jdbcType="VARCHAR" property="remark" />
+        <result column="use_type" jdbcType="INTEGER" property="useType" />
+        <result column="room_type" jdbcType="CHAR" property="roomType" />
+        <result column="room_hall" jdbcType="INTEGER" property="roomHall" />
+        <result column="room_toilet" jdbcType="INTEGER" property="roomToilet" />
+        <result column="room_balcony" jdbcType="INTEGER" property="roomBalcony" />
+        <result column="city_area" jdbcType="VARCHAR" property="cityArea" />
+        <result column="priece_area" jdbcType="VARCHAR" property="prieceArea" />
+        <result column="house_area" jdbcType="VARCHAR" property="houseArea" />
+        <result column="school" jdbcType="VARCHAR" property="school" />
+        <result column="location" jdbcType="VARCHAR" property="location" />
+        <result column="square_min" jdbcType="REAL" property="squareMin" />
+        <result column="square_max" jdbcType="REAL" property="squareMax" />
+        <result column="selling_min" jdbcType="REAL" property="sellingMin" />
+        <result column="selling_max" jdbcType="REAL" property="sellingMax" />
+        <result column="unit" jdbcType="INTEGER" property="unit" />
+        <result column="floor_min" jdbcType="INTEGER" property="floorMin" />
+        <result column="floor_max" jdbcType="INTEGER" property="floorMax" />
+        <result column="floor_lase" jdbcType="INTEGER" property="floorLase" />
+        <result column="floor_first" jdbcType="INTEGER" property="floorFirst" />
+        <result column="pay_type" jdbcType="INTEGER" property="payType" />
+        <result column="towards_type" jdbcType="INTEGER" property="towardsType" />
+        <result column="decorate_type" jdbcType="INTEGER" property="decorateType" />
+        <result column="belongto_user_id" jdbcType="BIGINT" property="belongtoUserId" />
+        <result column="belongto_partment_id" jdbcType="BIGINT" property="belongtoPartmentId" />
+        <result column="STATUS" jdbcType="INTEGER" property="status" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="creat_time" jdbcType="TIMESTAMP" property="creatTime" />
+        <result column="version" jdbcType="BIGINT" property="version" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+        @mbggenerated
+        -->
+        id, roomer_key, roomer_code, trade_status, resource, trade_type, peculiarity, pub_private, 
+        grade, entrust, entrust_date, user_id, roomer_name, phone, id_num, email, qq, current_address, 
+        sex, country, family_register, intention, buy_deadline, profession, house_type, house_goal, 
+        remark, use_type, room_type, room_hall, room_toilet, room_balcony, city_area, priece_area, 
+        house_area, school, location, square_min, square_max, selling_min, selling_max, unit, 
+        floor_min, floor_max, floor_lase, floor_first, pay_type, towards_type, decorate_type, 
+        belongto_user_id, belongto_partment_id, STATUS, update_time, creat_time, version
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--
+        @mbggenerated
+        -->
+        select 
+        <include refid="Base_Column_List" />
+        from erp_roomer_info
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--
+        @mbggenerated
+        -->
+        delete from erp_roomer_info
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.mybatis.model.ErpRoomerInfo">
+        <!--
+        @mbggenerated
+        -->
+        <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into erp_roomer_info (id, roomer_key, roomer_code, 
+            trade_status, resource, trade_type, 
+            peculiarity, pub_private, grade, 
+            entrust, entrust_date, user_id, 
+            roomer_name, phone, id_num, 
+            email, qq, current_address, 
+            sex, country, family_register, 
+            intention, buy_deadline, profession, 
+            house_type, house_goal, remark, 
+            use_type, room_type, room_hall, 
+            room_toilet, room_balcony, city_area, 
+            priece_area, house_area, school, 
+            location, square_min, square_max, 
+            selling_min, selling_max, unit, 
+            floor_min, floor_max, floor_lase, 
+            floor_first, pay_type, towards_type, 
+            decorate_type, belongto_user_id, belongto_partment_id, 
+            STATUS, update_time, creat_time, 
+            version)
+        values (#{id,jdbcType=BIGINT}, #{roomerKey,jdbcType=VARCHAR}, #{roomerCode,jdbcType=VARCHAR}, 
+            #{tradeStatus,jdbcType=INTEGER}, #{resource,jdbcType=INTEGER}, #{tradeType,jdbcType=INTEGER}, 
+            #{peculiarity,jdbcType=INTEGER}, #{pubPrivate,jdbcType=INTEGER}, #{grade,jdbcType=CHAR}, 
+            #{entrust,jdbcType=INTEGER}, #{entrustDate,jdbcType=DATE}, #{userId,jdbcType=BIGINT}, 
+            #{roomerName,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{idNum,jdbcType=VARCHAR}, 
+            #{email,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{currentAddress,jdbcType=VARCHAR}, 
+            #{sex,jdbcType=CHAR}, #{country,jdbcType=VARCHAR}, #{familyRegister,jdbcType=VARCHAR}, 
+            #{intention,jdbcType=INTEGER}, #{buyDeadline,jdbcType=INTEGER}, #{profession,jdbcType=INTEGER}, 
+            #{houseType,jdbcType=INTEGER}, #{houseGoal,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+            #{useType,jdbcType=INTEGER}, #{roomType,jdbcType=CHAR}, #{roomHall,jdbcType=INTEGER}, 
+            #{roomToilet,jdbcType=INTEGER}, #{roomBalcony,jdbcType=INTEGER}, #{cityArea,jdbcType=VARCHAR}, 
+            #{prieceArea,jdbcType=VARCHAR}, #{houseArea,jdbcType=VARCHAR}, #{school,jdbcType=VARCHAR}, 
+            #{location,jdbcType=VARCHAR}, #{squareMin,jdbcType=REAL}, #{squareMax,jdbcType=REAL}, 
+            #{sellingMin,jdbcType=REAL}, #{sellingMax,jdbcType=REAL}, #{unit,jdbcType=INTEGER}, 
+            #{floorMin,jdbcType=INTEGER}, #{floorMax,jdbcType=INTEGER}, #{floorLase,jdbcType=INTEGER}, 
+            #{floorFirst,jdbcType=INTEGER}, #{payType,jdbcType=INTEGER}, #{towardsType,jdbcType=INTEGER}, 
+            #{decorateType,jdbcType=INTEGER}, #{belongtoUserId,jdbcType=BIGINT}, #{belongtoPartmentId,jdbcType=BIGINT}, 
+            #{status,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, #{creatTime,jdbcType=TIMESTAMP}, 
+            #{version,jdbcType=BIGINT})
+    </insert>
+    <insert id="insertSelective" parameterType="com.mybatis.model.ErpRoomerInfo">
+        <!--
+        @mbggenerated
+        -->
+        <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into erp_roomer_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            id,
+            <if test="roomerKey != null">
+                roomer_key,
+            </if>
+            <if test="roomerCode != null">
+                roomer_code,
+            </if>
+            <if test="tradeStatus != null">
+                trade_status,
+            </if>
+            <if test="resource != null">
+                resource,
+            </if>
+            <if test="tradeType != null">
+                trade_type,
+            </if>
+            <if test="peculiarity != null">
+                peculiarity,
+            </if>
+            <if test="pubPrivate != null">
+                pub_private,
+            </if>
+            <if test="grade != null">
+                grade,
+            </if>
+            <if test="entrust != null">
+                entrust,
+            </if>
+            <if test="entrustDate != null">
+                entrust_date,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="roomerName != null">
+                roomer_name,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="idNum != null">
+                id_num,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="qq != null">
+                qq,
+            </if>
+            <if test="currentAddress != null">
+                current_address,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="country != null">
+                country,
+            </if>
+            <if test="familyRegister != null">
+                family_register,
+            </if>
+            <if test="intention != null">
+                intention,
+            </if>
+            <if test="buyDeadline != null">
+                buy_deadline,
+            </if>
+            <if test="profession != null">
+                profession,
+            </if>
+            <if test="houseType != null">
+                house_type,
+            </if>
+            <if test="houseGoal != null">
+                house_goal,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="useType != null">
+                use_type,
+            </if>
+            <if test="roomType != null">
+                room_type,
+            </if>
+            <if test="roomHall != null">
+                room_hall,
+            </if>
+            <if test="roomToilet != null">
+                room_toilet,
+            </if>
+            <if test="roomBalcony != null">
+                room_balcony,
+            </if>
+            <if test="cityArea != null">
+                city_area,
+            </if>
+            <if test="prieceArea != null">
+                priece_area,
+            </if>
+            <if test="houseArea != null">
+                house_area,
+            </if>
+            <if test="school != null">
+                school,
+            </if>
+            <if test="location != null">
+                location,
+            </if>
+            <if test="squareMin != null">
+                square_min,
+            </if>
+            <if test="squareMax != null">
+                square_max,
+            </if>
+            <if test="sellingMin != null">
+                selling_min,
+            </if>
+            <if test="sellingMax != null">
+                selling_max,
+            </if>
+            <if test="unit != null">
+                unit,
+            </if>
+            <if test="floorMin != null">
+                floor_min,
+            </if>
+            <if test="floorMax != null">
+                floor_max,
+            </if>
+            <if test="floorLase != null">
+                floor_lase,
+            </if>
+            <if test="floorFirst != null">
+                floor_first,
+            </if>
+            <if test="payType != null">
+                pay_type,
+            </if>
+            <if test="towardsType != null">
+                towards_type,
+            </if>
+            <if test="decorateType != null">
+                decorate_type,
+            </if>
+            <if test="belongtoUserId != null">
+                belongto_user_id,
+            </if>
+            <if test="belongtoPartmentId != null">
+                belongto_partment_id,
+            </if>
+            <if test="status != null">
+                STATUS,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="creatTime != null">
+                creat_time,
+            </if>
+            <if test="version != null">
+                version,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            #{id,jdbcType=BIGINT},
+            <if test="roomerKey != null">
+                #{roomerKey,jdbcType=VARCHAR},
+            </if>
+            <if test="roomerCode != null">
+                #{roomerCode,jdbcType=VARCHAR},
+            </if>
+            <if test="tradeStatus != null">
+                #{tradeStatus,jdbcType=INTEGER},
+            </if>
+            <if test="resource != null">
+                #{resource,jdbcType=INTEGER},
+            </if>
+            <if test="tradeType != null">
+                #{tradeType,jdbcType=INTEGER},
+            </if>
+            <if test="peculiarity != null">
+                #{peculiarity,jdbcType=INTEGER},
+            </if>
+            <if test="pubPrivate != null">
+                #{pubPrivate,jdbcType=INTEGER},
+            </if>
+            <if test="grade != null">
+                #{grade,jdbcType=CHAR},
+            </if>
+            <if test="entrust != null">
+                #{entrust,jdbcType=INTEGER},
+            </if>
+            <if test="entrustDate != null">
+                #{entrustDate,jdbcType=DATE},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="roomerName != null">
+                #{roomerName,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="idNum != null">
+                #{idNum,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null">
+                #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="currentAddress != null">
+                #{currentAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=CHAR},
+            </if>
+            <if test="country != null">
+                #{country,jdbcType=VARCHAR},
+            </if>
+            <if test="familyRegister != null">
+                #{familyRegister,jdbcType=VARCHAR},
+            </if>
+            <if test="intention != null">
+                #{intention,jdbcType=INTEGER},
+            </if>
+            <if test="buyDeadline != null">
+                #{buyDeadline,jdbcType=INTEGER},
+            </if>
+            <if test="profession != null">
+                #{profession,jdbcType=INTEGER},
+            </if>
+            <if test="houseType != null">
+                #{houseType,jdbcType=INTEGER},
+            </if>
+            <if test="houseGoal != null">
+                #{houseGoal,jdbcType=INTEGER},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="useType != null">
+                #{useType,jdbcType=INTEGER},
+            </if>
+            <if test="roomType != null">
+                #{roomType,jdbcType=CHAR},
+            </if>
+            <if test="roomHall != null">
+                #{roomHall,jdbcType=INTEGER},
+            </if>
+            <if test="roomToilet != null">
+                #{roomToilet,jdbcType=INTEGER},
+            </if>
+            <if test="roomBalcony != null">
+                #{roomBalcony,jdbcType=INTEGER},
+            </if>
+            <if test="cityArea != null">
+                #{cityArea,jdbcType=VARCHAR},
+            </if>
+            <if test="prieceArea != null">
+                #{prieceArea,jdbcType=VARCHAR},
+            </if>
+            <if test="houseArea != null">
+                #{houseArea,jdbcType=VARCHAR},
+            </if>
+            <if test="school != null">
+                #{school,jdbcType=VARCHAR},
+            </if>
+            <if test="location != null">
+                #{location,jdbcType=VARCHAR},
+            </if>
+            <if test="squareMin != null">
+                #{squareMin,jdbcType=REAL},
+            </if>
+            <if test="squareMax != null">
+                #{squareMax,jdbcType=REAL},
+            </if>
+            <if test="sellingMin != null">
+                #{sellingMin,jdbcType=REAL},
+            </if>
+            <if test="sellingMax != null">
+                #{sellingMax,jdbcType=REAL},
+            </if>
+            <if test="unit != null">
+                #{unit,jdbcType=INTEGER},
+            </if>
+            <if test="floorMin != null">
+                #{floorMin,jdbcType=INTEGER},
+            </if>
+            <if test="floorMax != null">
+                #{floorMax,jdbcType=INTEGER},
+            </if>
+            <if test="floorLase != null">
+                #{floorLase,jdbcType=INTEGER},
+            </if>
+            <if test="floorFirst != null">
+                #{floorFirst,jdbcType=INTEGER},
+            </if>
+            <if test="payType != null">
+                #{payType,jdbcType=INTEGER},
+            </if>
+            <if test="towardsType != null">
+                #{towardsType,jdbcType=INTEGER},
+            </if>
+            <if test="decorateType != null">
+                #{decorateType,jdbcType=INTEGER},
+            </if>
+            <if test="belongtoUserId != null">
+                #{belongtoUserId,jdbcType=BIGINT},
+            </if>
+            <if test="belongtoPartmentId != null">
+                #{belongtoPartmentId,jdbcType=BIGINT},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creatTime != null">
+                #{creatTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="version != null">
+                #{version,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.model.ErpRoomerInfo">
+        <!--
+        @mbggenerated
+        -->
+        update erp_roomer_info
+        <set>
+            <if test="roomerKey != null">
+                roomer_key = #{roomerKey,jdbcType=VARCHAR},
+            </if>
+            <if test="roomerCode != null">
+                roomer_code = #{roomerCode,jdbcType=VARCHAR},
+            </if>
+            <if test="tradeStatus != null">
+                trade_status = #{tradeStatus,jdbcType=INTEGER},
+            </if>
+            <if test="resource != null">
+                resource = #{resource,jdbcType=INTEGER},
+            </if>
+            <if test="tradeType != null">
+                trade_type = #{tradeType,jdbcType=INTEGER},
+            </if>
+            <if test="peculiarity != null">
+                peculiarity = #{peculiarity,jdbcType=INTEGER},
+            </if>
+            <if test="pubPrivate != null">
+                pub_private = #{pubPrivate,jdbcType=INTEGER},
+            </if>
+            <if test="grade != null">
+                grade = #{grade,jdbcType=CHAR},
+            </if>
+            <if test="entrust != null">
+                entrust = #{entrust,jdbcType=INTEGER},
+            </if>
+            <if test="entrustDate != null">
+                entrust_date = #{entrustDate,jdbcType=DATE},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="roomerName != null">
+                roomer_name = #{roomerName,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                phone = #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="idNum != null">
+                id_num = #{idNum,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null">
+                qq = #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="currentAddress != null">
+                current_address = #{currentAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=CHAR},
+            </if>
+            <if test="country != null">
+                country = #{country,jdbcType=VARCHAR},
+            </if>
+            <if test="familyRegister != null">
+                family_register = #{familyRegister,jdbcType=VARCHAR},
+            </if>
+            <if test="intention != null">
+                intention = #{intention,jdbcType=INTEGER},
+            </if>
+            <if test="buyDeadline != null">
+                buy_deadline = #{buyDeadline,jdbcType=INTEGER},
+            </if>
+            <if test="profession != null">
+                profession = #{profession,jdbcType=INTEGER},
+            </if>
+            <if test="houseType != null">
+                house_type = #{houseType,jdbcType=INTEGER},
+            </if>
+            <if test="houseGoal != null">
+                house_goal = #{houseGoal,jdbcType=INTEGER},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="useType != null">
+                use_type = #{useType,jdbcType=INTEGER},
+            </if>
+            <if test="roomType != null">
+                room_type = #{roomType,jdbcType=CHAR},
+            </if>
+            <if test="roomHall != null">
+                room_hall = #{roomHall,jdbcType=INTEGER},
+            </if>
+            <if test="roomToilet != null">
+                room_toilet = #{roomToilet,jdbcType=INTEGER},
+            </if>
+            <if test="roomBalcony != null">
+                room_balcony = #{roomBalcony,jdbcType=INTEGER},
+            </if>
+            <if test="cityArea != null">
+                city_area = #{cityArea,jdbcType=VARCHAR},
+            </if>
+            <if test="prieceArea != null">
+                priece_area = #{prieceArea,jdbcType=VARCHAR},
+            </if>
+            <if test="houseArea != null">
+                house_area = #{houseArea,jdbcType=VARCHAR},
+            </if>
+            <if test="school != null">
+                school = #{school,jdbcType=VARCHAR},
+            </if>
+            <if test="location != null">
+                location = #{location,jdbcType=VARCHAR},
+            </if>
+            <if test="squareMin != null">
+                square_min = #{squareMin,jdbcType=REAL},
+            </if>
+            <if test="squareMax != null">
+                square_max = #{squareMax,jdbcType=REAL},
+            </if>
+            <if test="sellingMin != null">
+                selling_min = #{sellingMin,jdbcType=REAL},
+            </if>
+            <if test="sellingMax != null">
+                selling_max = #{sellingMax,jdbcType=REAL},
+            </if>
+            <if test="unit != null">
+                unit = #{unit,jdbcType=INTEGER},
+            </if>
+            <if test="floorMin != null">
+                floor_min = #{floorMin,jdbcType=INTEGER},
+            </if>
+            <if test="floorMax != null">
+                floor_max = #{floorMax,jdbcType=INTEGER},
+            </if>
+            <if test="floorLase != null">
+                floor_lase = #{floorLase,jdbcType=INTEGER},
+            </if>
+            <if test="floorFirst != null">
+                floor_first = #{floorFirst,jdbcType=INTEGER},
+            </if>
+            <if test="payType != null">
+                pay_type = #{payType,jdbcType=INTEGER},
+            </if>
+            <if test="towardsType != null">
+                towards_type = #{towardsType,jdbcType=INTEGER},
+            </if>
+            <if test="decorateType != null">
+                decorate_type = #{decorateType,jdbcType=INTEGER},
+            </if>
+            <if test="belongtoUserId != null">
+                belongto_user_id = #{belongtoUserId,jdbcType=BIGINT},
+            </if>
+            <if test="belongtoPartmentId != null">
+                belongto_partment_id = #{belongtoPartmentId,jdbcType=BIGINT},
+            </if>
+            <if test="status != null">
+                STATUS = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creatTime != null">
+                creat_time = #{creatTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="version != null">
+                version = #{version,jdbcType=BIGINT},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.mybatis.model.ErpRoomerInfo">
+        <!--
+        @mbggenerated
+        -->
+        update erp_roomer_info
+        set roomer_key = #{roomerKey,jdbcType=VARCHAR},
+            roomer_code = #{roomerCode,jdbcType=VARCHAR},
+            trade_status = #{tradeStatus,jdbcType=INTEGER},
+            resource = #{resource,jdbcType=INTEGER},
+            trade_type = #{tradeType,jdbcType=INTEGER},
+            peculiarity = #{peculiarity,jdbcType=INTEGER},
+            pub_private = #{pubPrivate,jdbcType=INTEGER},
+            grade = #{grade,jdbcType=CHAR},
+            entrust = #{entrust,jdbcType=INTEGER},
+            entrust_date = #{entrustDate,jdbcType=DATE},
+            user_id = #{userId,jdbcType=BIGINT},
+            roomer_name = #{roomerName,jdbcType=VARCHAR},
+            phone = #{phone,jdbcType=VARCHAR},
+            id_num = #{idNum,jdbcType=VARCHAR},
+            email = #{email,jdbcType=VARCHAR},
+            qq = #{qq,jdbcType=VARCHAR},
+            current_address = #{currentAddress,jdbcType=VARCHAR},
+            sex = #{sex,jdbcType=CHAR},
+            country = #{country,jdbcType=VARCHAR},
+            family_register = #{familyRegister,jdbcType=VARCHAR},
+            intention = #{intention,jdbcType=INTEGER},
+            buy_deadline = #{buyDeadline,jdbcType=INTEGER},
+            profession = #{profession,jdbcType=INTEGER},
+            house_type = #{houseType,jdbcType=INTEGER},
+            house_goal = #{houseGoal,jdbcType=INTEGER},
+            remark = #{remark,jdbcType=VARCHAR},
+            use_type = #{useType,jdbcType=INTEGER},
+            room_type = #{roomType,jdbcType=CHAR},
+            room_hall = #{roomHall,jdbcType=INTEGER},
+            room_toilet = #{roomToilet,jdbcType=INTEGER},
+            room_balcony = #{roomBalcony,jdbcType=INTEGER},
+            city_area = #{cityArea,jdbcType=VARCHAR},
+            priece_area = #{prieceArea,jdbcType=VARCHAR},
+            house_area = #{houseArea,jdbcType=VARCHAR},
+            school = #{school,jdbcType=VARCHAR},
+            location = #{location,jdbcType=VARCHAR},
+            square_min = #{squareMin,jdbcType=REAL},
+            square_max = #{squareMax,jdbcType=REAL},
+            selling_min = #{sellingMin,jdbcType=REAL},
+            selling_max = #{sellingMax,jdbcType=REAL},
+            unit = #{unit,jdbcType=INTEGER},
+            floor_min = #{floorMin,jdbcType=INTEGER},
+            floor_max = #{floorMax,jdbcType=INTEGER},
+            floor_lase = #{floorLase,jdbcType=INTEGER},
+            floor_first = #{floorFirst,jdbcType=INTEGER},
+            pay_type = #{payType,jdbcType=INTEGER},
+            towards_type = #{towardsType,jdbcType=INTEGER},
+            decorate_type = #{decorateType,jdbcType=INTEGER},
+            belongto_user_id = #{belongtoUserId,jdbcType=BIGINT},
+            belongto_partment_id = #{belongtoPartmentId,jdbcType=BIGINT},
+            STATUS = #{status,jdbcType=INTEGER},
+            update_time = #{updateTime,jdbcType=TIMESTAMP},
+            creat_time = #{creatTime,jdbcType=TIMESTAMP},
+            version = #{version,jdbcType=BIGINT}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>
